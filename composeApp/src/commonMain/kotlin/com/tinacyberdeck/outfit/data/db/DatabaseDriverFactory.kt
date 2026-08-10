@@ -1,0 +1,7 @@
+package com.tinacyberdeck.outfit.data.db
+
+import app.cash.sqldelight.db.SqlDriver
+
+expect class DatabaseDriverFactory {
+    fun createDriver(): SqlDriver
+}

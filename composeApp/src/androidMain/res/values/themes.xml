@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Tema base mínimo sin ActionBar. Usa el tema del framework para no
+        arrastrar dependencias de Material XML; toda la UI real la pinta Compose.
+    -->
+    <style name="Theme.OutfitCyberdeck" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#6B4423</item>
+        <item name="android:navigationBarColor">#6B4423</item>
+        <item name="android:windowBackground">#6B4423</item>
+    </style>
+</resources>

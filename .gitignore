@@ -1,0 +1,19 @@
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.env*
+!.env.example
+*.db
+*.sqlite*
+*.log
+.DS_Store
+.idea/
+*.iml
+*.apk
+*.aab
+*.xcuserstate
+
+# Internal development instructions and third-party visual references.
+CLAUDE.md
+/design-reference/

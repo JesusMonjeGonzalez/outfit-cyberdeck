@@ -1,0 +1,32 @@
+-- Cada prenda del armario virtual, clasificada a mano estilo "creación de personaje"
+
+CREATE TABLE garmentEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    imagePath TEXT NOT NULL,
+    category TEXT NOT NULL,      -- TOP, BOTTOM, FOOTWEAR, OUTERWEAR, ACCESSORY, BAG
+    garmentType TEXT NOT NULL,   -- camiseta, sudadera, vaquero, falda, bota, bolso...
+    primaryColor TEXT NOT NULL,  -- hex "#RRGGBB"
+    fit TEXT NOT NULL,           -- HOLGADO, CEÑIDO, OVERSIZE, REGULAR
+    season TEXT NOT NULL,        -- VERANO, INVIERNO, ENTRETIEMPO, TODO_EL_AÑO
+    style TEXT NOT NULL,         -- CASUAL, FORMAL, DEPORTE, GOING_OUT, TRABAJO
+    createdAt INTEGER NOT NULL
+);
+
+insertGarment:
+INSERT INTO garmentEntity(imagePath, category, garmentType, primaryColor, fit, season, style, createdAt)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAllGarments:
+SELECT * FROM garmentEntity ORDER BY createdAt DESC;
+
+selectGarmentsByCategory:
+SELECT * FROM garmentEntity WHERE category = ? ORDER BY createdAt DESC;
+
+selectGarmentById:
+SELECT * FROM garmentEntity WHERE id = ?;
+
+deleteGarment:
+DELETE FROM garmentEntity WHERE id = ?;
+
+countGarments:
+SELECT COUNT(*) FROM garmentEntity;

@@ -1,0 +1,36 @@
+-- Combinaciones de outfit generadas o guardadas por el usuario
+
+CREATE TABLE outfitEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    topId INTEGER,
+    bottomId INTEGER,
+    footwearId INTEGER,
+    outerwearId INTEGER,
+    accessoryId INTEGER,
+    bagId INTEGER,
+    isFavorite INTEGER NOT NULL DEFAULT 0,
+    createdAt INTEGER NOT NULL,
+    FOREIGN KEY (topId) REFERENCES garmentEntity(id) ON DELETE SET NULL,
+    FOREIGN KEY (bottomId) REFERENCES garmentEntity(id) ON DELETE SET NULL,
+    FOREIGN KEY (footwearId) REFERENCES garmentEntity(id) ON DELETE SET NULL,
+    FOREIGN KEY (outerwearId) REFERENCES garmentEntity(id) ON DELETE SET NULL,
+    FOREIGN KEY (accessoryId) REFERENCES garmentEntity(id) ON DELETE SET NULL,
+    FOREIGN KEY (bagId) REFERENCES garmentEntity(id) ON DELETE SET NULL
+);
+
+insertOutfit:
+INSERT INTO outfitEntity(name, topId, bottomId, footwearId, outerwearId, accessoryId, bagId, isFavorite, createdAt)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAllOutfits:
+SELECT * FROM outfitEntity ORDER BY createdAt DESC;
+
+selectFavoriteOutfits:
+SELECT * FROM outfitEntity WHERE isFavorite = 1 ORDER BY createdAt DESC;
+
+setFavorite:
+UPDATE outfitEntity SET isFavorite = ? WHERE id = ?;
+
+deleteOutfit:
+DELETE FROM outfitEntity WHERE id = ?;

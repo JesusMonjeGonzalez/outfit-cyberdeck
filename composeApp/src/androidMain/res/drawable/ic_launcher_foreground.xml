@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Camiseta simple centrada en el área segura del icono adaptativo (108dp,
+    con ~66dp de zona segura). Relleno pergamino con contorno tinta.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#FCE8C2"
+        android:strokeColor="#4A3220"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:pathData="M42,34 L36,40 L28,48 L34,56 L40,52 L40,76 L68,76 L68,52 L74,56 L80,48 L72,40 L66,34 L60,34 C58,40 50,40 48,34 Z" />
+
+    <path
+        android:fillColor="#C1440E"
+        android:pathData="M48,34 C50,40 58,40 60,34 L57,33 C55,37 53,37 51,33 Z" />
+</vector>
