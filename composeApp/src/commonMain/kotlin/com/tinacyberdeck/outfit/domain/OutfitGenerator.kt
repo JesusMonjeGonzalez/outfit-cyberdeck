@@ -4,8 +4,8 @@ import kotlin.random.Random
 
 /**
  * Genera combinaciones de outfit a partir del armario disponible.
- * Reglas simples y explicables: mismo estilo o compatible, misma temporada
- * o "todo el año", evita chocar demasiados colores saturados a la vez.
+ * Reglas simples y explicables: mismo estilo o compatible y misma temporada
+ * o "todo el año".
  */
 class OutfitGenerator(private val random: Random = Random.Default) {
 

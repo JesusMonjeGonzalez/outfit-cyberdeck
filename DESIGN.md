@@ -25,7 +25,7 @@ Elementos clave a preservar:
   no funcional; en nuestra versión puede sustituirse por un icono de percha o similar
   si se quiere un guiño temático a "ropa" sin copiar el asset original del juego.
 
-## Paleta (ya en `PixelColors.kt`, no la dupliques con literales sueltos)
+## Paleta (ya en `PixelTheme.kt`, no la dupliques con literales sueltos)
 
 | Token | Hex | Uso |
 |---|---|---|
@@ -75,12 +75,10 @@ El esqueleto actual usa la tipografía del sistema con pesos ajustados (`FontWei
 └─────────────────────────────────────────────┘
 ```
 
-Esto ya está implementado en `AddGarmentScreen.kt`. Al portarlo a pantalla completa
-en un móvil real, ten en cuenta:
+Esto ya está implementado en `AddGarmentScreen.kt`, incluida la adaptación a
+pantallas estrechas mediante `BoxWithConstraints`. Al evolucionarlo, ten en cuenta:
 
-- En pantallas estrechas (la mayoría de Android en vertical), el `Row` foto+atributos
-  puede no caber sin scroll. Evalúa pasar a `Column` (foto arriba, atributos abajo) por
-  debajo de un ancho umbral, usando `BoxWithConstraints` o `WindowSizeClass`.
+- Mantén la variante vertical con foto arriba y atributos debajo en anchos estrechos.
 - El marco de madera (`WoodFrame`) usa paddings fijos en `dp` que no escalan con
   `fontScale` del sistema — verifica accesibilidad con texto grande activado.
 
@@ -88,8 +86,8 @@ en un móvil real, ten en cuenta:
 
 El **marco de madera de doble borde con esquinas cortadas** (`CutCornerShape` en los
 botones, bordes rectos en el marco) es el elemento que debe repetirse consistentemente
-en las tres pantallas (`AddGarmentScreen`, `WardrobeScreen`, `GeneratorScreen`) para
-que la app se sienta como un solo objeto de diseño y no tres pantallas distintas
+en todas las pantallas para que la app se sienta como un solo objeto de diseño y no
+varias superficies distintas
 pegadas con celo. Si añades pantallas nuevas (detalle de prenda, favoritos), reutiliza
 `WoodFrame` como contenedor raíz siempre que la pantalla sea un "panel" flotante sobre
 el fondo `WoodDark`; para pantallas de lista a pantalla completa (como `WardrobeScreen`)
