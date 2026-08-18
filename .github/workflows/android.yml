@@ -25,3 +25,5 @@ jobs:
         run: ./gradlew :composeApp:assembleDebug
       - name: Compile desktop target
         run: ./gradlew :composeApp:compileKotlinDesktop
+      - name: Run portable domain tests
+        run: ./gradlew :composeApp:desktopTest

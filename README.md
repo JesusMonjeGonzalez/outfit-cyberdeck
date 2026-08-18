@@ -137,9 +137,9 @@ Desktop data is stored under:
 
 ## Project Status
 
-Preview-quality application with successful Android and Desktop builds. The
-repository does not yet contain an automated test suite, so GitHub CI verifies
-Android compilation rather than runtime behavior.
+Preview-quality application with successful Android and Desktop builds. GitHub
+CI compiles both targets and runs the portable generator tests; UI and image
+storage behavior still require runtime validation.
 
 Known gaps:
 
@@ -147,7 +147,7 @@ Known gaps:
 - No direct camera capture, import/export, backup or device sync.
 - Theme selection is not persisted.
 - Deleting a garment removes the database row and attempts cleanup only inside the app-owned image directory.
-- Generator failure does not explain which required category is missing.
+- Generator failure does not yet explain which required category is missing.
 - No published APK, desktop installer or compatibility matrix.
 
 ## Next Steps

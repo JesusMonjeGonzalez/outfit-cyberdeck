@@ -35,6 +35,9 @@ kotlin {
             implementation(libs.coil.network)
             implementation(libs.navigation.compose)
         }
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+        }
         androidMain.dependencies {
             implementation(compose.uiTooling)
             implementation(libs.androidx.activity.compose)
