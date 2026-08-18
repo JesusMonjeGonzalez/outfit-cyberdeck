@@ -11,4 +11,4 @@ Still open before distributing packages:
 - export and backup/restore;
 - runtime checks on Android and Desktop;
 - accessibility and narrow-layout verification;
-- an explicit repository license.
+- a third-party dependency and asset inventory for packaged distribution.
