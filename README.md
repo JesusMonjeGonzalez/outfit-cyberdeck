@@ -158,3 +158,6 @@ Known gaps:
 4. Compose UI checks for narrow layouts and accessibility.
 
 See [`DESIGN.md`](DESIGN.md) for the visual system and component conventions.
+
+See the [security policy](SECURITY.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
+Outfit Cyberdeck is released under the [MIT License](LICENSE).
