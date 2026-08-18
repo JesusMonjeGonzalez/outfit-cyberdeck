@@ -146,7 +146,7 @@ Known gaps:
 - Garments cannot be edited after creation.
 - No direct camera capture, import/export, backup or device sync.
 - Theme selection is not persisted.
-- Deleting a garment does not yet remove its copied image file.
+- Deleting a garment removes the database row and attempts cleanup only inside the app-owned image directory.
 - Generator failure does not explain which required category is missing.
 - No published APK, desktop installer or compatibility matrix.
 

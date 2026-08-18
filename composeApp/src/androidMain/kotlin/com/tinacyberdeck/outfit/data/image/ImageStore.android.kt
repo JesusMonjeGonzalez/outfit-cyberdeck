@@ -5,6 +5,7 @@ import com.tinacyberdeck.outfit.AndroidAppContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
+import java.net.URI
 
 actual suspend fun persistImageLocally(source: String): String = withContext(Dispatchers.IO) {
     val context = AndroidAppContext.get()
@@ -27,4 +28,12 @@ actual suspend fun persistImageLocally(source: String): String = withContext(Dis
     }
 
     dest.toURI().toString()
+}
+
+actual suspend fun removePersistedImage(path: String) = withContext(Dispatchers.IO) {
+    val root = File(AndroidAppContext.get().filesDir, "garments").canonicalFile
+    val target = runCatching { File(URI(path)).canonicalFile }.getOrNull() ?: return@withContext
+    if (target.parentFile == root || target.path.startsWith(root.path + File.separator)) {
+        target.delete()
+    }
 }

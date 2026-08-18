@@ -10,3 +10,6 @@ package com.tinacyberdeck.outfit.data.image
  * bmp; en Android también heic/heif). Se copian los bytes sin recomprimir.
  */
 expect suspend fun persistImageLocally(source: String): String
+
+/** Elimina una imagen que Outfit creó dentro de su propio almacenamiento. */
+expect suspend fun removePersistedImage(path: String)

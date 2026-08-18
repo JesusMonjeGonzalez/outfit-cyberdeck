@@ -56,7 +56,7 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.1.0"
     }
     packaging {
         resources {
@@ -79,7 +79,7 @@ compose.desktop {
         mainClass = "com.tinacyberdeck.outfit.MainKt"
         nativeDistributions {
             packageName = "OutfitCyberdeck"
-            packageVersion = "1.0.0"
+            packageVersion = "0.1.0"
         }
     }
 }
