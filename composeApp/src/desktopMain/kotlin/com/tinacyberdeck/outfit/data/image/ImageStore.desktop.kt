@@ -15,3 +15,11 @@ actual suspend fun persistImageLocally(source: String): String = withContext(Dis
     srcFile.copyTo(dest, overwrite = true)
     dest.toURI().toString()
 }
+
+actual suspend fun removePersistedImage(path: String) = withContext(Dispatchers.IO) {
+    val root = File(System.getProperty("user.home"), ".outfit-cyberdeck/garments").canonicalFile
+    val target = runCatching { File(URI(path)).canonicalFile }.getOrNull() ?: return@withContext
+    if (target.parentFile == root || target.path.startsWith(root.path + File.separator)) {
+        target.delete()
+    }
+}

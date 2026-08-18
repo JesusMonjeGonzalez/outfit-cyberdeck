@@ -23,3 +23,7 @@ jobs:
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
       - name: Build debug APK
         run: ./gradlew :composeApp:assembleDebug
+      - name: Compile desktop target
+        run: ./gradlew :composeApp:compileKotlinDesktop
+      - name: Run portable domain tests
+        run: ./gradlew :composeApp:desktopTest
