@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tinacyberdeck.outfit.data.db.OutfitDatabaseProvider
 import com.tinacyberdeck.outfit.data.image.persistImageLocally
+import com.tinacyberdeck.outfit.data.image.removePersistedImage
 import com.tinacyberdeck.outfit.data.repository.OutfitRepository
 import com.tinacyberdeck.outfit.data.repository.WardrobeRepository
 import com.tinacyberdeck.outfit.domain.Garment
@@ -158,6 +159,7 @@ fun App(
                                 onDelete = { toDelete ->
                                     scope.launch {
                                         repository.deleteGarment(toDelete.id)
+                                        removePersistedImage(toDelete.imagePath)
                                         selectedGarment = null
                                         screen = Screen.WARDROBE
                                     }
